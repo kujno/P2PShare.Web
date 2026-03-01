@@ -25,6 +25,10 @@ try {
         return $user["username"] !== "admin";
     });
 
+    usort($users, function($a, $b) {
+        return $a["username"] <=> $b["username"];
+    });
+
     echo json_encode(["users" => $users]);
 
 } catch (PDOException $e) {

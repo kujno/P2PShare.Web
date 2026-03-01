@@ -128,6 +128,8 @@ if (!isset($_SESSION["loggedIn"]) || $_SESSION["loggedIn"] !== true) {
         window.location.href = "index.php";
       })
     }
+
+    GetUsers();
   </script>
 </body>
 </html>

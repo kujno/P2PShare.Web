@@ -11,6 +11,14 @@ $data = json_decode(file_get_contents("php://input"), true);
 $username = $data["username"] ?? "";
 $password = $data["password"] ?? "";
 
+try{
+  $dbConnection = new DBConnection();
+}
+catch (PDOException $e) {
+  echo json_encode(["error" => "Server failed."]);
+  exit;
+}
+
 if (!$username || !$password) {
   echo json_encode(["success" => false]);
   exit;
@@ -18,14 +26,6 @@ if (!$username || !$password) {
 
 if ($username !== "admin") {
   echo json_encode(["success" => false]);
-  exit;
-}
-
-try{
-  $dbConnection = new DBConnection();
-}
-catch (PDOException $e) {
-  echo json_encode(["error" => "Database connection failed."]);
   exit;
 }
 

@@ -6,9 +6,9 @@ header("Content-Type: application/json");
 
 require "../DBConnection.php";
 
-if (!isset($_SESSION['loggedIn'])) {
-    echo json_encode(["error" => "Unauthorized"]);
-    exit;
+if (!isset($_SESSION["loggedIn"]) || $_SESSION["loggedIn"] !== true) {
+  header("Location: ..\index.php");
+  exit;
 }
 
 try {
@@ -21,7 +21,11 @@ try {
 
     $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-    echo json_encode(["success" => true, "users" => $users]);
+    $users = array_filter($users, function($user) {
+        return $user["username"] !== "admin";
+    });
+
+    echo json_encode(["users" => $users]);
 
 } catch (PDOException $e) {
     echo json_encode(["success" => false, "error" => $e->getMessage()]);

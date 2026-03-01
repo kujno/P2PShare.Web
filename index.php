@@ -7,16 +7,18 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div id="loginContainer">
+    <section>
+      <div id="loginContainer">
         <h1>P2PShare Admin Login</h1>
         <input type="text" class="login" id="username" placeholder="Username">
         <input type="password" class="login" id="password" placeholder="Password">
         <p id="message"></p>
         <button onclick="Login()">Login</button>
-    </div>
+      </div>
+    </section>
 
     <script>
-      function Login(){
+      function Login() {
         const username = document.getElementById("username").value;
         const password = document.getElementById("password").value;
 
@@ -29,15 +31,17 @@
         })
         .then(response => response.json())
         .then(data => {
+        if (data.error != null) {
+          document.getElementById("message").textContent = data.error;
+          return;
+        }
+        
         if (data.success) {
             window.location.href = "admin.php";
           } else {
             document.getElementById("message").textContent = "Invalid credentials.";
           }
         })
-        .catch(error => {
-          document.getElementById("message").textContent = error.message;
-        });
       }
     </script>
 </body>

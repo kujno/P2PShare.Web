@@ -1,0 +1,182 @@
+body {
+  background-color: #15161B;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma;
+  height: 100vh;
+}
+
+div {
+  background-color: #71737D;
+  border-radius: 15px;
+}
+
+#loginContainer {
+  display: flex;
+  flex-direction: column;
+  width: 30em;
+  height: 20em;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  padding: 20px;
+}
+
+#adminPanel {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#adminContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  min-width: 30em;
+  width: 60%;
+}
+
+h1 {
+  color: #15161B;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+button {
+  background-color: #15161B;
+  color: #71737D;
+  border: none;
+  width: 85%;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+button:hover {
+  background-color: #71737D;
+  color: #15161B;
+}
+
+input {
+  padding: 10px;
+  border: 1px solid #15161B;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  margin: 0;
+}
+
+.login {
+  width: 80%;
+  margin-bottom: 15px;
+}
+
+p {
+  font-weight: bold;
+}
+
+#message {
+  margin-top: 15px;
+  color: red;
+}
+
+#userListHeader { 
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 20px;
+  margin: 0;
+  min-width: 0;
+  text-align: center;
+}
+
+#userListHeader p {
+  flex: 1;
+  margin: 0;
+  padding: 0 10px;
+  min-width: 0;
+  text-align: center;
+  line-height: 2em;
+}
+
+#buttons {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.adminButton {
+  width: 30%;
+  height: 3rem;
+}
+
+.userRow {
+  display: flex;
+  background-color: #15161B;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px 20px;
+  margin: 0;
+  text-align: center;
+}
+
+.userRow p {
+  color: #a7a8ae;
+  font-weight: bold;
+}
+
+.userRow input {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.flexItem {
+  flex: 1;
+  min-width: 0;
+  align-self: center;
+}
+
+.userRow input.flexItem {
+  height: 2em;
+  padding: 0 10px;
+  box-sizing: border-box;
+  margin: 0;
+  text-align: center;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%; 
+}
+
+#userList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
+}
+
+#space {
+  margin: 0;
+  padding: 0;
+}
+
+#logoutButton {
+  background-color: rgb(66, 0, 0);
+}
+
+#logoutButton:hover {
+  background-color: #71737D;
+  color : rgb(66, 0, 0);
+  transition: background-color 0.3s, color 0.3s;
+}

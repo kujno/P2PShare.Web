@@ -32,8 +32,14 @@ if ($username !== "admin") {
 $stmt = $dbConnection->PDO->query("SELECT password_hash FROM users WHERE username = \"admin\"");
 
 $result = $stmt->fetch(PDO::FETCH_ASSOC);
+$dbPasswordHash = $result["password_hash"] ?? null;
 
-if (Hasher::Verify($password, $result["password_hash"])){
+if (!$dbPasswordHash) {
+  echo json_encode(["success" => false]);
+  exit;
+}
+
+if (Hasher::Verify($password, $dbPasswordHash)){
   $_SESSION["loggedIn"] = true;  
 
 echo json_encode(["success" => true]);

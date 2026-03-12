@@ -2,7 +2,7 @@ body {
   background-color: #15161B;
   margin: 0;
   font-family: 'Segoe UI', Tahoma;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 div {
@@ -153,9 +153,9 @@ p {
 
 section {
   display: flex;
-  align-items: center;
   justify-content: center;
-  height: 100%; 
+  align-items: center;
+  min-height: 100vh;
 }
 
 #userList {
